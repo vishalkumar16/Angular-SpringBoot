@@ -1,0 +1,5 @@
+# DATASOURCE CONNECTION DETAILS 
+spring.datasource.url=jdbc:postgresql://localhost:5432/qaddb
+spring.datasource.username=qad_user
+spring.datasource.password=Qadpg123
+spring.batch.job.enabled=false

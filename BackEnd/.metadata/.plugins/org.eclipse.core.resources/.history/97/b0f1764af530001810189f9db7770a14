@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:batch="http://www.springframework.org/schema/batch" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch
+    http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+
+
+	<step id="slave" xmlns="http://www.springframework.org/schema/batch">
+		<tasklet>
+			<chunk reader="itemReader" processor="itemProcessor" writer="itemWriter"
+				commit-interval="1" skip-limit="15" retry-limit="3">
+				<skippable-exception-classes>
+					<include class="org.springframework.dao.DataIntegrityViolationException" />
+					<include class="java.sql.SQLException" />
+                    <include class="java.net.SocketTimeoutException"/>
+                    <include class="org.apache.cxf.interceptor.Fault"/>
+				</skippable-exception-classes>
+				<retryable-exception-classes>
+					<include class="java.net.SocketTimeoutException"/>
+                    <include class="org.apache.cxf.interceptor.Fault"/>
+				</retryable-exception-classes>
+			</chunk>
+		</tasklet>
+	</step>
+
+	<bean id="partitioner" class="de.metro.qad.eq.partitioner.ProjectListPartitioner">
+	</bean>
+
+	<bean id="taskExecutor" class="org.springframework.core.task.SimpleAsyncTaskExecutor" />
+
+	<bean id="itemReader" class="de.metro.qad.eq.step.ProjectDataItemReader"
+		scope="step">
+		<constructor-arg value="#{stepExecutionContext[projectList]}" />
+		<constructor-arg value="#{stepExecutionContext[name]}" />
+	</bean>
+
+	<bean id="itemProcessor" class="de.metro.qad.eq.step.ProjectDataProcessor"
+		scope="step" />
+
+	<bean id="projectDataWriter" class="de.metro.qad.eq.step.ProjectDataWriter"
+		scope="step" />
+		
+		<bean id="projectQuestionDataWriter" class="de.metro.qad.eq.step.ProjectQuestionDataWriter"
+		scope="step" />
+		
+		<bean id="projectDataQualityWriter" class="de.metro.qad.eq.step.ProjectDataQualityWriter"
+		scope="step" />
+		
+		<bean id="projectQuestionDataQualityWriter" class="de.metro.qad.eq.step.ProjectQuestionDataQualityWriter"
+		scope="step" />
+		
+		
+		<bean id="projectQuestionAnswerWriter" class="de.metro.qad.eq.step.ProjectQuestionAnswerWriter"
+        scope="step" />
+        
+        <bean id="projectQuestionAnswerResponseWriter" class="de.metro.qad.eq.step.ProjectQuestionAnswerResponseWriter"
+        scope="step" />
+		
+		  <bean id="projectProductDataWriter" class="de.metro.qad.eq.step.ProjectProductDataWriter"
+        scope="step" />
+        
+		
+
+	<bean id="itemWriter"
+		class="org.springframework.batch.item.support.CompositeItemWriter"
+		scope="step">
+		<property name="delegates">
+			<list>
+				<ref bean="projectDataWriter" />
+				<ref bean="projectQuestionDataWriter" />
+				<ref bean="projectDataQualityWriter" />
+				<ref bean="projectQuestionDataQualityWriter" />
+				<ref bean="projectQuestionAnswerWriter" />
+                <ref bean="projectQuestionAnswerResponseWriter" />	
+                <ref bean="projectProductDataWriter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.batch.core.scope.StepScope" />
+
+	<bean
+		class="org.springframework.cloud.task.repository.support.SimpleTaskExplorer" />
+
+	<bean
+		class="org.springframework.cloud.task.repository.support.TaskExecutionDaoFactoryBean" />
+
+</beans>

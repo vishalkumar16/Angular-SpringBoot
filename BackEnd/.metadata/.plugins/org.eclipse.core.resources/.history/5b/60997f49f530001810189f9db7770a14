@@ -1,0 +1,13 @@
+{     
+    "namespace": "eq",     
+    "type": "record",     
+    "name": "EQProjectDataQualityExport",     
+    "fields": [  
+                                {"name": "id", "type": "long"},
+                                {"name": "data_quality_id", "type":"long"},
+                                {"name": "error_description", "type":"string"},
+                                {"name": "timestamp",  "type":{ "type": "long", "logicalType": "timestamp-millis" }}
+                                
+    ] 
+}
+

@@ -1,0 +1,305 @@
+
+--*******************************************************
+--              Connect using 'postgres'
+--*******************************************************
+
+
+-- User: qad_user
+-- DROP USER qad_user;
+
+CREATE USER qad_user WITH
+  LOGIN
+  NOSUPERUSER
+  INHERIT
+  NOCREATEDB
+  NOCREATEROLE
+  NOREPLICATION;
+
+
+-- Database: qaddb
+
+-- DROP DATABASE qaddb;
+
+CREATE DATABASE qaddb
+    WITH 
+    OWNER = qad_user
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United States.1252'
+    LC_CTYPE = 'English_United States.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+    
+
+--*******************************************************
+--              Connect using 'qad_user'
+--*******************************************************
+
+
+-- SCHEMA: eq
+
+-- DROP SCHEMA eq ;
+
+CREATE SCHEMA eq
+    AUTHORIZATION qad_user;   
+
+
+
+CREATE SEQUENCE eq.project_list_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+CREATE SEQUENCE eq.project_data_quality_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1; 
+    
+    CREATE SEQUENCE eq.project_question_data_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+-- Table: eq.project_data
+
+-- DROP TABLE eq.project_data;
+
+CREATE TABLE eq.project_data
+(
+    id integer NOT NULL DEFAULT nextval('eq.project_list_id_seq'::regclass),
+    unique_id character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    bu character varying(30),
+    tasting_method character varying(200),
+    reason_trigger character varying(200),
+    international_department character varying(200),
+    project_number character varying(200),
+    project_name character varying(200),
+    author character varying(200),
+    status character varying(30),
+    created TIMESTAMP,
+    modified TIMESTAMP, 
+    question_count integer,
+    CAMQ_template_compliance character varying(200),
+    asof_ts timestamp with time zone DEFAULT now(),
+    until_ts timestamp with time zone,
+    data_quality_id integer,
+    CONSTRAINT project_list_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+);
+
+CREATE SEQUENCE eq.project_data_quality_table_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;  
+    
+-- Table: eq.project_data_quality
+-- DROP TABLE eq.project_data_quality;
+
+CREATE TABLE eq.project_data_quality
+(
+    id integer NOT NULL DEFAULT nextval('eq.project_data_quality_table_seq'::regclass),
+    data_quality_id integer NOT NULL,
+	error_description character varying(1000),
+	type character varying(30),
+	asof_ts timestamp with time zone DEFAULT now(),
+    until_ts timestamp with time zone,
+    CONSTRAINT valid_ingredients_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+
+-- DROP TABLE eq.project_question_data;
+
+CREATE TABLE eq.project_question_data
+(
+    id integer NOT NULL DEFAULT nextval('eq.project_list_id_seq'::regclass),
+    unique_id character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    question_number character varying(30),
+    description character varying(200),
+    type character varying(200),
+    asof_ts timestamp with time zone DEFAULT now(),
+    until_ts timestamp with time zone,
+    data_quality_id integer,
+    CONSTRAINT project_data_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+);
+
+
+ALTER TABLE eq.project_data
+    OWNER to qad_user;
+    
+    
+    
+    
+--DROP SEQUENCE eq.project_product_data_seq;
+
+CREATE SEQUENCE eq.project_product_data_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE eq.project_product_data_seq
+    OWNER TO qad_user;
+    
+    
+CREATE SEQUENCE eq.project_question_answer_resp_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE eq.project_question_answer_resp_seq
+    OWNER TO qad_user;
+    
+    
+CREATE SEQUENCE eq.project_question_answer_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE eq.project_question_answer_seq
+    OWNER TO qad_user;
+    
+    
+-- Table: eq.project_product_data
+
+ --DROP TABLE eq.project_product_data;
+
+CREATE TABLE eq.project_product_data
+(
+    id integer NOT NULL DEFAULT nextval('eq.project_product_data_seq'::regclass),
+    unique_id character varying(200) COLLATE pg_catalog."default",
+    product_id character varying(200) COLLATE pg_catalog."default",
+    product_value character varying(200) COLLATE pg_catalog."default",
+    codes character varying(200) COLLATE pg_catalog."default",
+    description character varying(200) COLLATE pg_catalog."default",
+    description2 character varying(200) COLLATE pg_catalog."default",
+    description3 character varying(200) COLLATE pg_catalog."default",
+    item_id character varying(200) COLLATE pg_catalog."default",
+    description4 character varying(200) COLLATE pg_catalog."default",
+    asof_ts timestamp with time zone DEFAULT now(),
+    until_ts timestamp with time zone,
+    CONSTRAINT project_product_data_key PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+);
+
+ALTER TABLE eq.project_product_data
+    OWNER to qad_user;
+    
+-- Table: eq.project_question_answer_data
+
+-- DROP TABLE eq.project_question_answer_data;
+
+CREATE TABLE eq.project_question_answer_data
+(
+    id integer NOT NULL,
+    unique_id character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    respondent character varying(200) COLLATE pg_catalog."default",
+    response_timestamp character varying(200) COLLATE pg_catalog."default",
+    product character varying(200) COLLATE pg_catalog."default",
+    response_replica character varying(200) COLLATE pg_catalog."default",
+    seqnr character varying(200) COLLATE pg_catalog."default",
+    response_session character varying(200) COLLATE pg_catalog."default",
+    asof_ts timestamp with time zone DEFAULT now(),
+    until_ts timestamp with time zone,
+    CONSTRAINT project_answer_key PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+);
+
+ALTER TABLE eq.project_question_answer_data
+    OWNER to qad_user;
+    
+    
+-- Table: eq.project_question_answer_resp_data
+
+--DROP TABLE eq.project_question_answer_resp_data;
+
+CREATE TABLE eq.project_question_answer_resp_data
+(
+    id integer NOT NULL DEFAULT nextval('eq.project_question_answer_resp_seq'::regclass),
+    project_ques_ans_data_id integer NOT NULL,
+    question character varying(200) COLLATE pg_catalog."default",
+    answer character varying(200) COLLATE pg_catalog."default",
+    asof_ts timestamp with time zone DEFAULT now(),
+    until_ts timestamp with time zone,
+    CONSTRAINT project_answer_res_key PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+);
+
+ALTER TABLE eq.project_question_answer_resp_data
+    OWNER to qad_user;
+    
+    
+-- View: eq.product_acceptance_vw
+
+--DROP VIEW eq.product_acceptance_vw;
+
+CREATE VIEW eq.product_acceptance_vw AS
+ WITH main_query AS (
+         SELECT pqad.unique_id,
+            pqad.product,
+            avg(pqard.answer::real) AS product_score
+           FROM eq.project_question_answer_data pqad,
+            eq.project_question_answer_resp_data pqard
+          WHERE pqad.id = pqard.project_ques_ans_data_id AND pqad.until_ts IS NULL AND pqard.until_ts IS NULL
+          GROUP BY pqad.unique_id, pqad.product
+        )
+ SELECT main_query.unique_id,
+    ppd.product_id,
+    ppd.product_value,
+    ppd.codes,
+    ppd.description,
+    ppd.description2,
+    ppd.description3,
+    ppd.description4,
+    ppd.item_id,
+    main_query.product_score,
+        CASE
+            WHEN main_query.product_score <= 3::double precision THEN 'Unsuitable'::text
+            WHEN main_query.product_score > 3::double precision AND main_query.product_score <= 6::double precision THEN 'Unacceptable'::text
+            WHEN main_query.product_score > 6::double precision AND main_query.product_score <= 9::double precision THEN 'Acceptable'::text
+            WHEN main_query.product_score > 9::double precision THEN 'Match'::text
+            ELSE NULL::text
+        END AS conclusion
+   FROM main_query,
+    eq.project_product_data ppd
+  WHERE main_query.product::text = ppd.product_id::text AND ppd.until_ts IS NULL AND main_query.unique_id::text = ppd.unique_id::text
+  ORDER BY main_query.unique_id, ppd.product_id;
+
+ALTER TABLE eq.product_acceptance_vw
+    OWNER TO qad_user;
+
+GRANT ALL ON TABLE eq.product_acceptance_vw TO qad_user;
+GRANT SELECT ON TABLE eq.product_acceptance_vw TO qad_read_user;
+
+
+
+
+ 
+
+
+    
+   

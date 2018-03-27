@@ -1,0 +1,26 @@
+package de.metro.dashboard.repository;
+
+import java.util.List;
+
+import org.springframework.data.repository.Repository;
+
+import de.metro.dashboard.model.User;
+
+public class UserRepository extends Repository {
+
+    void delete(User user) {
+    	
+    }
+
+    List findAll() {
+    	
+    }
+
+    User findOne(int id) {
+    	
+    }
+
+    User save(User user) {
+    	
+    }
+}

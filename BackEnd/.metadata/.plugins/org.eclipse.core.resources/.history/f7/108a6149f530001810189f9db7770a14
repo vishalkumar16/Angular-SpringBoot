@@ -1,0 +1,19 @@
+{    
+   "namespace": "eq",    
+   "type": "record",    
+   "name": "EQProjectDataExport",    
+   "fields": [  
+        {"name": "id", "type": "long"},            
+       {"name": "unique_id",  "type":["null","string"]},    
+       {"name": "bu",  "type":["null","string"]},     
+       {"name": "tasting_method",  "type":["null","string"]},
+       {"name": "reason_trigger",  "type":["null","string"]},
+       {"name": "international_department",  "type":["null","string"]},
+       {"name": "project_number",  "type":["null","string"]},
+       {"name": "project_name",  "type":["null","string"]},
+       {"name": "created",  "type":["null","string"]},
+       {"name": "modified",  "type":["null","string"]},
+        {"name": "timestamp",  "type":{ "type": "long", "logicalType": "timestamp-millis" }},
+        {"name": "data_quality_id", "type":["null","long"]}
+   ] 
+} 

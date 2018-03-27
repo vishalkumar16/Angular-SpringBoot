@@ -1,0 +1,14 @@
+spring.datasource.url=jdbc:postgresql://localhost:5432/qaddb
+spring.datasource.username=qad_user
+spring.datasource.password=Qadpg123
+spring.batch.job.enabled=false
+
+client.address=https://eyequestion.metrosystems.net/eq/webservices/EQWS.wsdl
+user.id=EQWSPROD
+password=5gLgregL2r3thsgzaJT7
+
+# DANA data ingestion schema id
+dana.ingestion.schema.id=ef0f8060ef8febfca52a7b64eca30fa7
+
+# DANA data ingestion URL
+dana.ingestion.api.base.url=https://analytics-pp.metrosystems.net/ingest/DE

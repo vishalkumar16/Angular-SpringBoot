@@ -1,0 +1,1705 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.logic8.com/eq/webservices/generated" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.logic8.com/eq/webservices/generated" targetNamespace="http://www.logic8.com/eq/webservices/generated">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:per="http://www.logic8.com/eq/webservices/generated" elementFormDefault="qualified" targetNamespace="http://www.logic8.com/eq/webservices/generated">
+
+	<!-- By changing this file you also need to do a new ant with target XJC 
+		And refresh your eclipse project -->
+
+	<attribute name="login" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="var" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="folder" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="headerfield" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="headervalue" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="projectid" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="format" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="success" type="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="oldlogin" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="newlogin" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="setid" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="dt" type="dateTime" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="mailtype" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="mail" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>	
+	<attribute name="subject" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>	
+	<attribute name="name" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>	
+	<attribute name="template" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="subjects" type="int" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="objects" type="int" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="design" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="setfield" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="setvalue" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="codes" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="fileName" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="projectName" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="base64ZipData" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="companyName" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="token" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="platformName" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="register" type="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="text" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="varlabel" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="id" type="int" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="password" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="fullname" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="email" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="lastname" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="firstname" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="initials" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="field" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="value" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="type" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="nr" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="url" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="description" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="conjunction" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="oldLogin" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="newLogin" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	<attribute name="logUser" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <attribute name="uniqueId" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		
+	<!-- Objects -->
+	<element name="TemplateList" xmlns="http://www.w3.org/2001/XMLSchema">
+	    <complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element name="fileName" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="alias" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	  </element>
+	<element name="ProjectList" xmlns="http://www.w3.org/2001/XMLSchema">
+	    <complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element name="unid" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>	        
+	      </sequence>
+	    </complexType>
+	  </element>
+	<element name="ProjectListWithInfo" xmlns="http://www.w3.org/2001/XMLSchema">
+	    <complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element name="unid" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="description" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="title" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="resume" type="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="startdate" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="enddate" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>	
+	        <element name="url" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>	                
+	      </sequence>
+	    </complexType>
+	  </element> 
+	<element name="EQCategory" xmlns="http://www.w3.org/2001/XMLSchema">
+	    <complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element name="id" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="code" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="question" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="type" type="int" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="multiple" type="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>	
+	        <element maxOccurs="unbounded" minOccurs="0" ref="per:option" xmlns="http://www.w3.org/2001/XMLSchema"/>        
+	      </sequence>
+	    </complexType>
+	</element>   	
+	<element name="ColumnInfo" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	      	<element maxOccurs="1" minOccurs="1" name="name" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      	<element maxOccurs="1" minOccurs="1" name="question" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      	<element maxOccurs="1" minOccurs="1" name="type" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element maxOccurs="unbounded" minOccurs="0" ref="per:option" xmlns="http://www.w3.org/2001/XMLSchema"/> 
+	      </sequence>
+	    </complexType>
+	</element>  
+	<element name="option" xmlns="http://www.w3.org/2001/XMLSchema">
+	    <complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element name="sort" type="int" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="value" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="display" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	</element>	       
+	<element name="EQFile" xmlns="http://www.w3.org/2001/XMLSchema">
+	    <complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element name="fileName" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="alias" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	</element>
+	<element name="Panelist" xmlns="http://www.w3.org/2001/XMLSchema">
+	    <complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element name="login" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="fullname" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="dbid" type="int" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	</element>
+	<element name="Column" xmlns="http://www.w3.org/2001/XMLSchema">
+	    <complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element name="varlabel" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="description" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>	        
+	      </sequence>
+	    </complexType>
+	</element>
+	<element name="query" xmlns="http://www.w3.org/2001/XMLSchema">
+	    <complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element name="varlabel" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="operator" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="value" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>	        	        
+	      </sequence>
+	    </complexType>
+	</element>
+	<element name="parameters" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:conjunction" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	
+	<!-- Get Version EQ -->
+	<element name="getVersionRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:login" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="getVersionResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<!-- get version of EQ -->
+			<restriction base="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+
+	<!-- ProjectInformation Export functionality. -->
+    <element name="getProjectsByStatusRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+        <complexType xmlns="http://www.w3.org/2001/XMLSchema">
+            <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+                <element maxOccurs="1" minOccurs="1" name="status" type="int" xmlns="http://www.w3.org/2001/XMLSchema"/>
+				<element maxOccurs="1" minOccurs="1" name="retrieved" type="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="path" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getProjectsByStatusResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+        <complexType xmlns="http://www.w3.org/2001/XMLSchema">
+            <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+                <choice maxOccurs="unbounded" minOccurs="0" xmlns="http://www.w3.org/2001/XMLSchema">
+                    <element name="projectId" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+                </choice>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="getProjectDataRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+        <complexType xmlns="http://www.w3.org/2001/XMLSchema">
+            <attribute ref="per:uniqueId" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+        </complexType>
+    </element>
+    <element name="getProjectDataResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+        <complexType xmlns="http://www.w3.org/2001/XMLSchema">
+            <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+                <element name="projectData" type="base64Binary" xmlns="http://www.w3.org/2001/XMLSchema"/>
+            </sequence>
+        </complexType>
+    </element>
+
+	<!-- Documented Commands -->
+	<!-- Get project templates -->
+	<element name="getTemplatesRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:login" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="getTemplatesResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element maxOccurs="unbounded" minOccurs="0" ref="per:TemplateList" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	</element>
+	
+	<!-- Get designs -->
+	<element name="getDesignsRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:var" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="getDesignsResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element maxOccurs="unbounded" minOccurs="0" ref="per:EQFile" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	</element>
+	
+	<!-- Get Results -->
+	<element name="getResultsRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:folder" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:projectid" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:format" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="getResultsResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element maxOccurs="unbounded" minOccurs="0" ref="per:EQFile" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	</element>
+	
+	<!-- Get Project Panelists -->
+	<element name="exportPanelistsRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:folder" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:projectid" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:format" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="exportPanelistsResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element maxOccurs="unbounded" minOccurs="0" ref="per:Panelist" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	</element>
+	
+	<!-- Generate PDF -->
+	<element name="getPDFRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:folder" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:projectid" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="getPDFResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element maxOccurs="unbounded" minOccurs="0" ref="per:EQFile" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	</element>
+	
+	<!-- Deploy one or more projects -->
+	<element name="deployProjectsRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="deployProjectsResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- UNDeploy one or more projects -->
+	<element name="undeployProjectsRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="undeployProjectsResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>	
+	
+	<!-- get sessions per project -->
+	<element name="getSessionCountRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="getSessionCountResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element maxOccurs="4" minOccurs="4" name="sessionCounter" type="int" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	</element>
+	
+	<!-- Exchange Panelist -->
+	<element name="exchangePanelistRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:oldlogin" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:newlogin" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="exchangePanelistResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Disable Product in Design -->
+	<element name="disableProductRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:value" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>			
+		</complexType>
+	</element>
+	<element name="disableProductResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Assign Design Set -->
+	<element name="assignSetToPanelistRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:login" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:setid" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="assignSetToPanelistResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Assign Panelist -->
+	<element name="assignPanelistRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:login" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>			
+		</complexType>
+	</element>
+	<element name="assignPanelistResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Schedule E-mail -->
+	<element name="scheduleMailRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:dt" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:mailtype" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:mail" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:subject" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="scheduleMailResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Create Project -->
+	<element name="createProjectRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:name" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:folder" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:template" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:subjects" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:objects" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:design" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="createProjectResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Close Project -->
+	<element name="closeProjectRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:name" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>			
+		</complexType>
+	</element>
+	<element name="closeProjectResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Create Panelist -->
+	<element name="createPanelistRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:login" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:password" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:fullname" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:email" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:lastname" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:firstname" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:initials" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="createPanelistResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Set Panelist Field-->
+	<element name="setPanelistFieldRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:login" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:field" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:value" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>			
+		</complexType>
+	</element>
+	<element name="setPanelistFieldResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Delete Panelist -->
+	<element name="removePanelistRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:login" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="removePanelistResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Get Project Header Possibilities -->
+	<element name="getHeaderPossibilitiesRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+    	<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="getHeaderPossibilitiesResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+		   <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+		      <choice maxOccurs="unbounded" minOccurs="0" xmlns="http://www.w3.org/2001/XMLSchema">
+		         <element name="header" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		      </choice>
+		   </sequence>
+		</complexType>
+	</element>
+	
+	<!-- Get Project Header Value -->
+	<element name="getProjectHeaderValueRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+    	<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="getProjectHeaderValueResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+		
+	<!-- Set Project Header Value -->
+	<element name="setHeaderValueRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:setfield" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:setvalue" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="setHeaderValueResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Set Blinding Codes -->
+	<element name="setBlindingCodesRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:codes" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="setBlindingCodesResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	 
+	<!-- EyeContact Commands -->
+	<!-- Registration Projects  --> 
+    <element name="getRegistrationProjectsRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+    	<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>    	
+    </element>
+    <element name="getRegistrationProjectsResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+    	<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element id="RegistrationProjectList" maxOccurs="unbounded" minOccurs="0" ref="per:Project" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+    </element>
+    <element name="Project" xmlns="http://www.w3.org/2001/XMLSchema">
+    	<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element name="fileName" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	        <element name="alias" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+    </element>
+    
+    <!-- EyeMobile Request -->
+    <!-- Get Mobile projects -->
+	<element name="getMobileProjectsRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+    	<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:login" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="getMobileProjectsResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element id="MobileProjectList" maxOccurs="unbounded" minOccurs="0" ref="per:Project" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	</element>
+	
+	<!-- Get Mobile project -->
+	<element name="getMobileProjectRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+    	<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:fileName" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="getMobileProjectResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Get Mobile project filepaths-->
+	<element name="getMobileProjectFilePathsRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+    	<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectName" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="getMobileProjectFilePathsResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- upload Mobile project -->
+	<element name="uploadMobileProjectRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+    	<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:base64ZipData" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:fileName" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="uploadMobileProjectResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Set Product Property -->
+	<element name="setPropertyRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headerfield" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:headervalue" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:type" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:nr" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:name" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:value" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="setPropertyResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Register for the push service -->
+	<element name="getRegisterForPushServiceRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+    	<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:companyName" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:token" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:platformName" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:register" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="getRegisterForPushServiceResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Generate project access URL -->
+	<element name="generateProjectAccessURLRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+    	<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectName" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:login" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="generateProjectAccessURLResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- Return authorized project -->
+	<element name="getAuthorizedProjectsRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+				<sequence xmlns="http://www.w3.org/2001/XMLSchema">
+					  <element maxOccurs="1" minOccurs="1" name="login" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		              <element maxOccurs="unbounded" minOccurs="0" name="projectids" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		      	</sequence>	      							
+		</complexType>
+	</element>
+	<element name="getAuthorizedProjectsResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element maxOccurs="unbounded" minOccurs="0" ref="per:ProjectListWithInfo" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	</element>
+	
+	<!-- Return authorized project -->
+	<element name="createScreenerRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+				<sequence xmlns="http://www.w3.org/2001/XMLSchema">
+					  <element maxOccurs="1" minOccurs="1" name="name" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+					  <element maxOccurs="1" minOccurs="1" name="title" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+					  <element maxOccurs="1" minOccurs="1" name="code" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+					  <element maxOccurs="1" minOccurs="0" name="enddate" type="dateTime" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		              <element maxOccurs="unbounded" minOccurs="0" ref="per:EQCategory" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		      	</sequence>	      							
+		</complexType>
+	</element>
+	<element name="createScreenerResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+	
+	<!-- EC Integratie Queries -->
+	<element name="getDatasetColumnsRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="getDatasetColumnsResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element maxOccurs="unbounded" minOccurs="0" ref="per:Column" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	</element>	
+	
+	<element name="getDatasetColumnInfoRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:projectid" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:varlabel" use="required" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="getDatasetColumnInfoResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	      	<element maxOccurs="1" minOccurs="1" ref="per:ColumnInfo" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	</element>
+	
+	<element name="queryDatasetRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">			
+			<sequence xmlns="http://www.w3.org/2001/XMLSchema">
+				<element maxOccurs="1" minOccurs="1" ref="per:parameters" xmlns="http://www.w3.org/2001/XMLSchema"/>
+ 	      		<element maxOccurs="20" minOccurs="1" ref="per:query" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      	</sequence>
+		</complexType>
+	</element>	
+	<element name="queryDatasetResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	      	<element maxOccurs="unbounded" minOccurs="0" name="user" type="string" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+	</element>	
+	
+	<element name="getProjectsRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+    	<complexType xmlns="http://www.w3.org/2001/XMLSchema">			
+				<attribute ref="per:var" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>		
+	  	</complexType>
+    </element>
+    <element name="getProjectsResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+    	<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+	      <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+	        <element id="ProjectList" maxOccurs="unbounded" minOccurs="0" ref="per:Project" xmlns="http://www.w3.org/2001/XMLSchema"/>
+	      </sequence>
+	    </complexType>
+    </element>	
+    
+    <!-- UNDeploy one or more projects -->
+	<element name="changeLoginRequest" xmlns="http://www.w3.org/2001/XMLSchema">
+		<complexType xmlns="http://www.w3.org/2001/XMLSchema">
+			<attribute ref="per:oldLogin" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:newLogin" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+			<attribute ref="per:logUser" use="optional" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</complexType>
+	</element>
+	<element name="changeLoginResponse" xmlns="http://www.w3.org/2001/XMLSchema">
+		<simpleType xmlns="http://www.w3.org/2001/XMLSchema">
+			<restriction base="boolean" xmlns="http://www.w3.org/2001/XMLSchema"/>
+		</simpleType>
+	</element>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="exchangePanelistRequest">
+    <wsdl:part element="tns:exchangePanelistRequest" name="exchangePanelistRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProjectsResponse">
+    <wsdl:part element="tns:getProjectsResponse" name="getProjectsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRegistrationProjectsRequest">
+    <wsdl:part element="tns:getRegistrationProjectsRequest" name="getRegistrationProjectsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="assignSetToPanelistRequest">
+    <wsdl:part element="tns:assignSetToPanelistRequest" name="assignSetToPanelistRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createScreenerRequest">
+    <wsdl:part element="tns:createScreenerRequest" name="createScreenerRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setPanelistFieldResponse">
+    <wsdl:part element="tns:setPanelistFieldResponse" name="setPanelistFieldResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPDFResponse">
+    <wsdl:part element="tns:getPDFResponse" name="getPDFResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setPanelistFieldRequest">
+    <wsdl:part element="tns:setPanelistFieldRequest" name="setPanelistFieldRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProjectHeaderValueResponse">
+    <wsdl:part element="tns:getProjectHeaderValueResponse" name="getProjectHeaderValueResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSessionCountResponse">
+    <wsdl:part element="tns:getSessionCountResponse" name="getSessionCountResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMobileProjectsRequest">
+    <wsdl:part element="tns:getMobileProjectsRequest" name="getMobileProjectsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="generateProjectAccessURLRequest">
+    <wsdl:part element="tns:generateProjectAccessURLRequest" name="generateProjectAccessURLRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMobileProjectFilePathsRequest">
+    <wsdl:part element="tns:getMobileProjectFilePathsRequest" name="getMobileProjectFilePathsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createProjectRequest">
+    <wsdl:part element="tns:createProjectRequest" name="createProjectRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="undeployProjectsRequest">
+    <wsdl:part element="tns:undeployProjectsRequest" name="undeployProjectsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProjectDataRequest">
+    <wsdl:part element="tns:getProjectDataRequest" name="getProjectDataRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="generateProjectAccessURLResponse">
+    <wsdl:part element="tns:generateProjectAccessURLResponse" name="generateProjectAccessURLResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getResultsRequest">
+    <wsdl:part element="tns:getResultsRequest" name="getResultsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createPanelistRequest">
+    <wsdl:part element="tns:createPanelistRequest" name="createPanelistRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProjectsByStatusResponse">
+    <wsdl:part element="tns:getProjectsByStatusResponse" name="getProjectsByStatusResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProjectsRequest">
+    <wsdl:part element="tns:getProjectsRequest" name="getProjectsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getResultsResponse">
+    <wsdl:part element="tns:getResultsResponse" name="getResultsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHeaderPossibilitiesResponse">
+    <wsdl:part element="tns:getHeaderPossibilitiesResponse" name="getHeaderPossibilitiesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setHeaderValueRequest">
+    <wsdl:part element="tns:setHeaderValueRequest" name="setHeaderValueRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDesignsResponse">
+    <wsdl:part element="tns:getDesignsResponse" name="getDesignsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="undeployProjectsResponse">
+    <wsdl:part element="tns:undeployProjectsResponse" name="undeployProjectsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="disableProductResponse">
+    <wsdl:part element="tns:disableProductResponse" name="disableProductResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="assignSetToPanelistResponse">
+    <wsdl:part element="tns:assignSetToPanelistResponse" name="assignSetToPanelistResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setBlindingCodesResponse">
+    <wsdl:part element="tns:setBlindingCodesResponse" name="setBlindingCodesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProjectDataResponse">
+    <wsdl:part element="tns:getProjectDataResponse" name="getProjectDataResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="closeProjectResponse">
+    <wsdl:part element="tns:closeProjectResponse" name="closeProjectResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPDFRequest">
+    <wsdl:part element="tns:getPDFRequest" name="getPDFRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="disableProductRequest">
+    <wsdl:part element="tns:disableProductRequest" name="disableProductRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removePanelistRequest">
+    <wsdl:part element="tns:removePanelistRequest" name="removePanelistRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deployProjectsRequest">
+    <wsdl:part element="tns:deployProjectsRequest" name="deployProjectsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="uploadMobileProjectRequest">
+    <wsdl:part element="tns:uploadMobileProjectRequest" name="uploadMobileProjectRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changeLoginRequest">
+    <wsdl:part element="tns:changeLoginRequest" name="changeLoginRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryDatasetRequest">
+    <wsdl:part element="tns:queryDatasetRequest" name="queryDatasetRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRegistrationProjectsResponse">
+    <wsdl:part element="tns:getRegistrationProjectsResponse" name="getRegistrationProjectsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removePanelistResponse">
+    <wsdl:part element="tns:removePanelistResponse" name="removePanelistResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProjectHeaderValueRequest">
+    <wsdl:part element="tns:getProjectHeaderValueRequest" name="getProjectHeaderValueRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVersionRequest">
+    <wsdl:part element="tns:getVersionRequest" name="getVersionRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDesignsRequest">
+    <wsdl:part element="tns:getDesignsRequest" name="getDesignsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changeLoginResponse">
+    <wsdl:part element="tns:changeLoginResponse" name="changeLoginResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMobileProjectRequest">
+    <wsdl:part element="tns:getMobileProjectRequest" name="getMobileProjectRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatasetColumnsRequest">
+    <wsdl:part element="tns:getDatasetColumnsRequest" name="getDatasetColumnsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createProjectResponse">
+    <wsdl:part element="tns:createProjectResponse" name="createProjectResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHeaderPossibilitiesRequest">
+    <wsdl:part element="tns:getHeaderPossibilitiesRequest" name="getHeaderPossibilitiesRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="uploadMobileProjectResponse">
+    <wsdl:part element="tns:uploadMobileProjectResponse" name="uploadMobileProjectResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMobileProjectResponse">
+    <wsdl:part element="tns:getMobileProjectResponse" name="getMobileProjectResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createPanelistResponse">
+    <wsdl:part element="tns:createPanelistResponse" name="createPanelistResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="scheduleMailRequest">
+    <wsdl:part element="tns:scheduleMailRequest" name="scheduleMailRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProjectsByStatusRequest">
+    <wsdl:part element="tns:getProjectsByStatusRequest" name="getProjectsByStatusRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exchangePanelistResponse">
+    <wsdl:part element="tns:exchangePanelistResponse" name="exchangePanelistResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatasetColumnInfoRequest">
+    <wsdl:part element="tns:getDatasetColumnInfoRequest" name="getDatasetColumnInfoRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMobileProjectFilePathsResponse">
+    <wsdl:part element="tns:getMobileProjectFilePathsResponse" name="getMobileProjectFilePathsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportPanelistsResponse">
+    <wsdl:part element="tns:exportPanelistsResponse" name="exportPanelistsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setPropertyRequest">
+    <wsdl:part element="tns:setPropertyRequest" name="setPropertyRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAuthorizedProjectsResponse">
+    <wsdl:part element="tns:getAuthorizedProjectsResponse" name="getAuthorizedProjectsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setBlindingCodesRequest">
+    <wsdl:part element="tns:setBlindingCodesRequest" name="setBlindingCodesRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatasetColumnInfoResponse">
+    <wsdl:part element="tns:getDatasetColumnInfoResponse" name="getDatasetColumnInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTemplatesRequest">
+    <wsdl:part element="tns:getTemplatesRequest" name="getTemplatesRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="assignPanelistResponse">
+    <wsdl:part element="tns:assignPanelistResponse" name="assignPanelistResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMobileProjectsResponse">
+    <wsdl:part element="tns:getMobileProjectsResponse" name="getMobileProjectsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setHeaderValueResponse">
+    <wsdl:part element="tns:setHeaderValueResponse" name="setHeaderValueResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="scheduleMailResponse">
+    <wsdl:part element="tns:scheduleMailResponse" name="scheduleMailResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRegisterForPushServiceResponse">
+    <wsdl:part element="tns:getRegisterForPushServiceResponse" name="getRegisterForPushServiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createScreenerResponse">
+    <wsdl:part element="tns:createScreenerResponse" name="createScreenerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportPanelistsRequest">
+    <wsdl:part element="tns:exportPanelistsRequest" name="exportPanelistsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deployProjectsResponse">
+    <wsdl:part element="tns:deployProjectsResponse" name="deployProjectsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="closeProjectRequest">
+    <wsdl:part element="tns:closeProjectRequest" name="closeProjectRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAuthorizedProjectsRequest">
+    <wsdl:part element="tns:getAuthorizedProjectsRequest" name="getAuthorizedProjectsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSessionCountRequest">
+    <wsdl:part element="tns:getSessionCountRequest" name="getSessionCountRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryDatasetResponse">
+    <wsdl:part element="tns:queryDatasetResponse" name="queryDatasetResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRegisterForPushServiceRequest">
+    <wsdl:part element="tns:getRegisterForPushServiceRequest" name="getRegisterForPushServiceRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setPropertyResponse">
+    <wsdl:part element="tns:setPropertyResponse" name="setPropertyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVersionResponse">
+    <wsdl:part element="tns:getVersionResponse" name="getVersionResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="assignPanelistRequest">
+    <wsdl:part element="tns:assignPanelistRequest" name="assignPanelistRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTemplatesResponse">
+    <wsdl:part element="tns:getTemplatesResponse" name="getTemplatesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatasetColumnsResponse">
+    <wsdl:part element="tns:getDatasetColumnsResponse" name="getDatasetColumnsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="eqws">
+    <wsdl:operation name="exchangePanelist">
+      <wsdl:input message="tns:exchangePanelistRequest" name="exchangePanelistRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:exchangePanelistResponse" name="exchangePanelistResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProjects">
+      <wsdl:input message="tns:getProjectsRequest" name="getProjectsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getProjectsResponse" name="getProjectsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRegistrationProjects">
+      <wsdl:input message="tns:getRegistrationProjectsRequest" name="getRegistrationProjectsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getRegistrationProjectsResponse" name="getRegistrationProjectsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="assignSetToPanelist">
+      <wsdl:input message="tns:assignSetToPanelistRequest" name="assignSetToPanelistRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:assignSetToPanelistResponse" name="assignSetToPanelistResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createScreener">
+      <wsdl:input message="tns:createScreenerRequest" name="createScreenerRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:createScreenerResponse" name="createScreenerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPanelistField">
+      <wsdl:input message="tns:setPanelistFieldRequest" name="setPanelistFieldRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:setPanelistFieldResponse" name="setPanelistFieldResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPDF">
+      <wsdl:input message="tns:getPDFRequest" name="getPDFRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getPDFResponse" name="getPDFResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProjectHeaderValue">
+      <wsdl:input message="tns:getProjectHeaderValueRequest" name="getProjectHeaderValueRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getProjectHeaderValueResponse" name="getProjectHeaderValueResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSessionCount">
+      <wsdl:input message="tns:getSessionCountRequest" name="getSessionCountRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getSessionCountResponse" name="getSessionCountResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMobileProjects">
+      <wsdl:input message="tns:getMobileProjectsRequest" name="getMobileProjectsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getMobileProjectsResponse" name="getMobileProjectsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generateProjectAccessURL">
+      <wsdl:input message="tns:generateProjectAccessURLRequest" name="generateProjectAccessURLRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:generateProjectAccessURLResponse" name="generateProjectAccessURLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMobileProjectFilePaths">
+      <wsdl:input message="tns:getMobileProjectFilePathsRequest" name="getMobileProjectFilePathsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getMobileProjectFilePathsResponse" name="getMobileProjectFilePathsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProject">
+      <wsdl:input message="tns:createProjectRequest" name="createProjectRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:createProjectResponse" name="createProjectResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="undeployProjects">
+      <wsdl:input message="tns:undeployProjectsRequest" name="undeployProjectsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:undeployProjectsResponse" name="undeployProjectsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProjectData">
+      <wsdl:input message="tns:getProjectDataRequest" name="getProjectDataRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getProjectDataResponse" name="getProjectDataResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResults">
+      <wsdl:input message="tns:getResultsRequest" name="getResultsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getResultsResponse" name="getResultsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPanelist">
+      <wsdl:input message="tns:createPanelistRequest" name="createPanelistRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:createPanelistResponse" name="createPanelistResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProjectsByStatus">
+      <wsdl:input message="tns:getProjectsByStatusRequest" name="getProjectsByStatusRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getProjectsByStatusResponse" name="getProjectsByStatusResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHeaderPossibilities">
+      <wsdl:input message="tns:getHeaderPossibilitiesRequest" name="getHeaderPossibilitiesRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getHeaderPossibilitiesResponse" name="getHeaderPossibilitiesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setHeaderValue">
+      <wsdl:input message="tns:setHeaderValueRequest" name="setHeaderValueRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:setHeaderValueResponse" name="setHeaderValueResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDesigns">
+      <wsdl:input message="tns:getDesignsRequest" name="getDesignsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getDesignsResponse" name="getDesignsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="disableProduct">
+      <wsdl:input message="tns:disableProductRequest" name="disableProductRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:disableProductResponse" name="disableProductResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setBlindingCodes">
+      <wsdl:input message="tns:setBlindingCodesRequest" name="setBlindingCodesRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:setBlindingCodesResponse" name="setBlindingCodesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeProject">
+      <wsdl:input message="tns:closeProjectRequest" name="closeProjectRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:closeProjectResponse" name="closeProjectResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePanelist">
+      <wsdl:input message="tns:removePanelistRequest" name="removePanelistRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:removePanelistResponse" name="removePanelistResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deployProjects">
+      <wsdl:input message="tns:deployProjectsRequest" name="deployProjectsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:deployProjectsResponse" name="deployProjectsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadMobileProject">
+      <wsdl:input message="tns:uploadMobileProjectRequest" name="uploadMobileProjectRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:uploadMobileProjectResponse" name="uploadMobileProjectResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeLogin">
+      <wsdl:input message="tns:changeLoginRequest" name="changeLoginRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:changeLoginResponse" name="changeLoginResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryDataset">
+      <wsdl:input message="tns:queryDatasetRequest" name="queryDatasetRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:queryDatasetResponse" name="queryDatasetResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <wsdl:input message="tns:getVersionRequest" name="getVersionRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getVersionResponse" name="getVersionResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMobileProject">
+      <wsdl:input message="tns:getMobileProjectRequest" name="getMobileProjectRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getMobileProjectResponse" name="getMobileProjectResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatasetColumns">
+      <wsdl:input message="tns:getDatasetColumnsRequest" name="getDatasetColumnsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatasetColumnsResponse" name="getDatasetColumnsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="scheduleMail">
+      <wsdl:input message="tns:scheduleMailRequest" name="scheduleMailRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:scheduleMailResponse" name="scheduleMailResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatasetColumnInfo">
+      <wsdl:input message="tns:getDatasetColumnInfoRequest" name="getDatasetColumnInfoRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatasetColumnInfoResponse" name="getDatasetColumnInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportPanelists">
+      <wsdl:input message="tns:exportPanelistsRequest" name="exportPanelistsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:exportPanelistsResponse" name="exportPanelistsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setProperty">
+      <wsdl:input message="tns:setPropertyRequest" name="setPropertyRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:setPropertyResponse" name="setPropertyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAuthorizedProjects">
+      <wsdl:input message="tns:getAuthorizedProjectsRequest" name="getAuthorizedProjectsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getAuthorizedProjectsResponse" name="getAuthorizedProjectsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTemplates">
+      <wsdl:input message="tns:getTemplatesRequest" name="getTemplatesRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getTemplatesResponse" name="getTemplatesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="assignPanelist">
+      <wsdl:input message="tns:assignPanelistRequest" name="assignPanelistRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:assignPanelistResponse" name="assignPanelistResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRegisterForPushService">
+      <wsdl:input message="tns:getRegisterForPushServiceRequest" name="getRegisterForPushServiceRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getRegisterForPushServiceResponse" name="getRegisterForPushServiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="eqwsSoap11" type="tns:eqws">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="exchangePanelist">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="exchangePanelistRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exchangePanelistResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProjects">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getProjectsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProjectsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRegistrationProjects">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getRegistrationProjectsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRegistrationProjectsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="assignSetToPanelist">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="assignSetToPanelistRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="assignSetToPanelistResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createScreener">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createScreenerRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createScreenerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPanelistField">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="setPanelistFieldRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setPanelistFieldResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPDF">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getPDFRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPDFResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProjectHeaderValue">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getProjectHeaderValueRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProjectHeaderValueResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSessionCount">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getSessionCountRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSessionCountResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMobileProjects">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getMobileProjectsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMobileProjectsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generateProjectAccessURL">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="generateProjectAccessURLRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="generateProjectAccessURLResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMobileProjectFilePaths">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getMobileProjectFilePathsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMobileProjectFilePathsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProject">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createProjectRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="undeployProjects">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="undeployProjectsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="undeployProjectsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProjectData">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getProjectDataRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProjectDataResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResults">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getResultsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getResultsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPanelist">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createPanelistRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createPanelistResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProjectsByStatus">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getProjectsByStatusRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProjectsByStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHeaderPossibilities">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getHeaderPossibilitiesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHeaderPossibilitiesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setHeaderValue">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="setHeaderValueRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setHeaderValueResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDesigns">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getDesignsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDesignsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="disableProduct">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="disableProductRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="disableProductResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setBlindingCodes">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="setBlindingCodesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setBlindingCodesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeProject">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="closeProjectRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="closeProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePanelist">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="removePanelistRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removePanelistResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deployProjects">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="deployProjectsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deployProjectsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadMobileProject">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="uploadMobileProjectRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="uploadMobileProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeLogin">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="changeLoginRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changeLoginResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryDataset">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="queryDatasetRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="queryDatasetResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getVersionRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getVersionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMobileProject">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getMobileProjectRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMobileProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatasetColumns">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getDatasetColumnsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDatasetColumnsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="scheduleMail">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="scheduleMailRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="scheduleMailResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatasetColumnInfo">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getDatasetColumnInfoRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDatasetColumnInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportPanelists">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="exportPanelistsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportPanelistsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setProperty">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="setPropertyRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setPropertyResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAuthorizedProjects">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getAuthorizedProjectsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAuthorizedProjectsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTemplates">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getTemplatesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTemplatesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="assignPanelist">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="assignPanelistRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="assignPanelistResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRegisterForPushService">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getRegisterForPushServiceRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRegisterForPushServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="eqwsService">
+    <wsdl:port binding="tns:eqwsSoap11" name="eqwsSoap11">
+      <soap:address location="/webservices"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

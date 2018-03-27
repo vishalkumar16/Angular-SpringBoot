@@ -1,0 +1,114 @@
+cut.Off.Date=01.12.2017 00:00
+date.format=dd.MM.yyyy HH:mm
+
+client.connection_timeout.value=60000
+client.receive_timeout.value=60000
+###################################################
+ #### Project Data Insertion Query
+###################################################
+
+ProjectDataDao.CLOSURE_OF_EXISTING_PROJECT_DATA_SQL =  update \
+                                                          eq.project_data \
+                                                       set \
+                                                          until_ts = now() \
+                                                       where \
+                                                          until_ts is null
+
+ProjectDataDao.NEXT_VAL_SQL	= SELECT \
+								nextval \
+							  ('eq.project_data_quality_seq')                                                         
+
+ProjectDataDao.PROJECT_DATA_INSERT_QUERY = insert into eq.project_data \
+                                              (unique_id,bu,tasting_method,reason_trigger,international_department,\
+                                              project_number,project_name,author,status,created,modified,\
+                                              question_count,CAMQ_template_compliance,data_quality_id) \
+			                               values \
+			                                 (?,?,?,?,?,?,?,?,?,?,?,?,?,?)\
+			                 
+ProjectDataQualityDao.CLOSURE_OF_EXISTING_DATA_QUALITY_SQL = update \
+                                                                eq.project_data_quality \
+                                                             set \
+                                                                until_ts = now() \
+                                                             where \
+                                                                until_ts is null and type = 'project_data'			                 
+			        
+ProjectDataQualityDao.INSERT_INTO_PROJECT_DATA_QUALITY_SQL = insert into eq.project_data_quality \
+                                                                (data_quality_id, error_description,type) \
+                                                             values \
+                                                                (?,?,'project_data')
+                                
+
+										
+
+ProjectQuestionDataDao.CLOSURE_OF_EXISTING_PROJECT_DATA_SQL =  update \
+                                                                  eq.project_question_data \
+                                                               set \
+                                                                  until_ts = now() \
+                                                               where \
+                                                                  until_ts is null
+
+ProjectQuestionDataDao.PROJECT_DATA_INSERT_QUERY = insert into eq.project_question_data \
+                                                      (unique_id,question_number,type,description,data_quality_id) \
+                                                   values \
+                                                      (?,?,?,?,?)\
+			                 
+ProjectQuestionDataDao.NEXT_VAL_SQL	= SELECT \
+										nextval \
+									  ('eq.project_question_data_seq')
+										
+ProjectQuestionDataQualityDao.CLOSURE_OF_EXISTING_DATA_QUALITY_SQL = update \
+                                                                        eq.project_data_quality \
+                                                                     set \
+                                                                        until_ts = now() \
+                                                                     where \
+                                                                        until_ts is null and type = 'project_question_data'
+										
+ProjectQuestionDataQualityDao.INSERT_INTO_PROJECT_DATA_QUALITY_SQL = insert into \
+                                                                       eq.project_data_quality \
+                                                                       (data_quality_id, error_description,type) \
+                                                                     values \
+                                                                       (?,?,'project_question_data')
+                                                                      
+ProjectQuestionAnswerDao.INSERT_INTO_PROJECT_QUESTION_ANSWER_DATA = insert into eq.project_question_answer_data\
+                                                                       (id, unique_id,respondent,response_timestamp,\
+                                                                       product,response_replica,seqnr,response_session) \
+                                                                    values\
+                                                                        (?,?,?,?,?,?,?,?)                                                                     
+
+ProjectQuestionAnswerDao.INSERT_INTO_PROJECT_QUESTION_ANSWER_RESP_DATA=insert into eq.project_question_answer_resp_data\
+                                                                           (project_ques_ans_data_id,question, answer)\
+                                                                        values\
+                                                                            (?,?,?)
+                                           
+ProjectQuestionAnswerDao.NEXT_VAL_SQL = SELECT \
+                                            nextval\
+                                        ('eq.project_question_answer_seq')
+                                            
+                                            
+ProjectQuestionAnswerResponseDao.CLOSURE_OF_EXISTING_PROJECT_QUESTION_ANSWER_DATA =  update \
+                                                                                       eq.project_question_answer_data \
+                                                                                     set \
+                                                                                        until_ts = now() \
+                                                                                     where \
+                                                                                        until_ts is null
+                                                             
+                                                             
+ProjectQuestionAnswerResponseDao.CLOSURE_OF_EXISTING_PROJECT_QUESTION_ANSWER_RESP_DATA =  update \
+                                                                                  eq.project_question_answer_resp_data \
+                                                                                          set \
+                                                                                             until_ts = now() \
+                                                                                          where \
+                                                                                             until_ts is null
+                                                             
+ProjectProductDataDao.INSERT_INTO_PROJECT_PRODUCT_DATA = insert into eq.project_product_data \
+                                                            (unique_id, product_id, product_value,codes,description, \
+                                                            description2, description3, description4, item_id  ) \
+                                                          values \
+                                                            (?,?,?,?,?,?,?,?,?)
+                                                             
+ProjectProductDataDao.CLOSURE_OF_EXISTING_PROJECT_PRODUCT_DATA =  update \
+                                                                     eq.project_product_data \
+                                                                  set \
+                                                                     until_ts = now() \
+                                                                  where \
+                                                                     until_ts is null                                                                                                   

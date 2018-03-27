@@ -1,0 +1,8 @@
+spring.datasource.url=jdbc:postgresql://localhost:5432/qaddb
+spring.datasource.username=qad_user
+spring.datasource.password=Qadpg123
+spring.batch.job.enabled=false
+
+client.address=https://eyequestion.metrosystems.net/eq_pp/webservices/EQWS.wsdl
+user.id=EQWSPREPROD
+password=bA0RyN7xsqU5Yt6ED2vm

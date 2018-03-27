@@ -1,0 +1,5 @@
+package de.metro.dashboard.controller;
+
+public class UserController {
+
+}

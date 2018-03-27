@@ -1,0 +1,5 @@
+package de.metro.dashboard.repository;
+
+public class UserRepository {
+
+}
